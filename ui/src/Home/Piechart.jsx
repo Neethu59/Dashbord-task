@@ -81,7 +81,7 @@ export default function Piechart() {
   const data01 = state?.map(({ label, value }) => ({ label, value }));
   console.log(data01);
 
-  const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+  const COLORS = ['#165247', '#237364', '#339583', '#4fbca8','#87efdc'];
 
   const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent }) => {
     const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
@@ -98,7 +98,7 @@ export default function Piechart() {
   return (
     <>
       <div>
-        <ResponsiveContainer width="100%" height={400}>
+        <ResponsiveContainer width="100%" height={200}>
           <PieChart>
             <Pie
               data={data01}
@@ -123,14 +123,14 @@ export default function Piechart() {
           <div key={`detail-${index}`} style={{ display: 'flex', alignItems: 'center', marginRight: '20px' }}>
             <div
               style={{
-                width: '20px',
-                height: '20px',
+                width: '10px',
+                height: '10px',
                 borderRadius:"50%",
                 backgroundColor: COLORS[index % COLORS.length],
                 marginRight: '8px',
               }}
             />
-            <span>{`${entry.label}: ${entry.value}`}</span>
+            <span>{`${entry.label}`}</span>
           </div>
         ))}
       </div>
